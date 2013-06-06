@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amadeus.Chromium.Tabs", "Amadeus.Chromium.Tabs\Amadeus.Chromium.Tabs.csproj", "{3FAAC104-C872-4D44-848E-66EA7FDBEBE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{9D3D4C49-9B59-48C8-A900-49149574F6CD}"
+	ProjectSection(SolutionItems) = preProject
+		Interfaces\README.md = Interfaces\README.md
+		Interfaces\output.log = Interfaces\output.log
+		Interfaces\ChromiumTabsAPI.cs = Interfaces\ChromiumTabsAPI.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{3B8CE4B1-30F2-47C6-A7F4-91FA781C25EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleApp", "SimpleApp", "{FDE204EA-27A3-4A28-8F1F-C8185B84E58A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApp", "Examples\SimpleApp\SimpleApp.csproj", "{D8522887-A43A-4B80-BC2F-EFF27614A657}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		AppStore|x86 = AppStore|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FAAC104-C872-4D44-848E-66EA7FDBEBE6}.AppStore|x86.ActiveCfg = AppStore|x86
+		{3FAAC104-C872-4D44-848E-66EA7FDBEBE6}.AppStore|x86.Build.0 = AppStore|x86
+		{3FAAC104-C872-4D44-848E-66EA7FDBEBE6}.Debug|x86.ActiveCfg = Debug|x86
+		{3FAAC104-C872-4D44-848E-66EA7FDBEBE6}.Debug|x86.Build.0 = Debug|x86
+		{3FAAC104-C872-4D44-848E-66EA7FDBEBE6}.Release|x86.ActiveCfg = Release|x86
+		{3FAAC104-C872-4D44-848E-66EA7FDBEBE6}.Release|x86.Build.0 = Release|x86
+		{D8522887-A43A-4B80-BC2F-EFF27614A657}.AppStore|x86.ActiveCfg = AppStore|x86
+		{D8522887-A43A-4B80-BC2F-EFF27614A657}.AppStore|x86.Build.0 = AppStore|x86
+		{D8522887-A43A-4B80-BC2F-EFF27614A657}.Debug|x86.ActiveCfg = Debug|x86
+		{D8522887-A43A-4B80-BC2F-EFF27614A657}.Debug|x86.Build.0 = Debug|x86
+		{D8522887-A43A-4B80-BC2F-EFF27614A657}.Release|x86.ActiveCfg = Release|x86
+		{D8522887-A43A-4B80-BC2F-EFF27614A657}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FDE204EA-27A3-4A28-8F1F-C8185B84E58A} = {3B8CE4B1-30F2-47C6-A7F4-91FA781C25EA}
+		{D8522887-A43A-4B80-BC2F-EFF27614A657} = {FDE204EA-27A3-4A28-8F1F-C8185B84E58A}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Examples\SimpleApp\SimpleApp.csproj
+	EndGlobalSection
+EndGlobal
