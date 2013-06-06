@@ -41,7 +41,7 @@ When building a "real" application you will need to subclass at least the `CTBro
 1. Check out (or download) the source code.
 2. Copy the **_ChromiumTabs.framework_** bundle under the *ChromiumTabs* directory. (If you do not have this, you can get it by compiling this [Chromium Tabs framework](https://github.com/Perikles/chromium-tabs) fork from source.)
 3. Copy **_MonoMac.dll_** and the **_bmac.exe_** generator, under the *Interfaces* directory. (If you do not have *bmac.exe*, you can get it by compiling [MonoMac](http://github.com/mono/monomac) from source.)
-4. Open the *Amadeus.Chromium.Tabs.sln* solution in [Xamarin Studio](http://monodevelop.com/Download
+4. Open the *Amadeus.Chromium.Tabs.sln* solution in [Xamarin Studio](http://monodevelop.com/Download).
 5. Choose your configuration and hit **Build**.
 
 > **Important:** Files in the *Awesomium.Chromium.Tabs* project that have a *g.cs* suffix, are generated automatically by the *bmac* generator when you build the solution. You should not edit these files manually. Any changes to these files will be lost when you build the solution. Instead, you can edit the **_ChromiumTabsAPI.cs_** file available under the *Interfaces* folder. For details about editing this file, see [Binding Objective-C Libraries - Binding Types Reference Guide](http://docs.xamarin.com/guides/ios/advanced_topics/binding_objective-c_libraries/binding_types_reference_guide)
