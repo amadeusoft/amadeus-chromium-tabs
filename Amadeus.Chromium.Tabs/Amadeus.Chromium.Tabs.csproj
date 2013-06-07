@@ -28,7 +28,7 @@
     <CreatePackage>false</CreatePackage>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyName>Amadeus.Chrome.Tabs</AssemblyName>
+    <AssemblyName>Amadeus.Chromium.Tabs</AssemblyName>
     <CustomCommands>
       <CustomCommands>
         <Command type="BeforeBuild" command="mono bmac.exe -r=System.Drawing -p -v --outdir=../ --sourceonly=output.log ChromiumTabsAPI.cs" workingdir="${SolutionDir}/Interfaces" />

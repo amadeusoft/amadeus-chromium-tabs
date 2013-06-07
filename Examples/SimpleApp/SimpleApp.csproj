@@ -34,6 +34,8 @@
         <Command type="AfterBuild" command="cp -Rpf ${SolutionDir}/ChromiumTabs/ChromiumTabs.framework ${TargetDir}/${ProjectName}.app/Contents/Frameworks/ChromiumTabs.framework/" />
       </CustomCommands>
     </CustomCommands>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <I18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <Optimize>true</Optimize>
@@ -41,13 +43,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseSGen>false</UseSGen>
-    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <PlatformTarget>x86</PlatformTarget>
     <LinkMode>Full</LinkMode>
-    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnableCodeSigning>false</EnableCodeSigning>
     <ConsolePause>false</ConsolePause>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <CreatePackage>true</CreatePackage>
+    <CreatePackage>false</CreatePackage>
     <CodeSigningKey>Developer ID Application</CodeSigningKey>
     <CustomCommands>
       <CustomCommands>
@@ -56,6 +58,8 @@
         <Command type="AfterBuild" command="cp -Rpf ${SolutionDir}/ChromiumTabs/ChromiumTabs.framework ${TargetDir}/${ProjectName}.app/Contents/Frameworks/ChromiumTabs.framework/" />
       </CustomCommands>
     </CustomCommands>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <I18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <Optimize>true</Optimize>
