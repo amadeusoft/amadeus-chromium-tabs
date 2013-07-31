@@ -103,7 +103,7 @@ namespace SimpleApp
             // This happens when a tab is created and when it's moved between windows.
             NSClipView clipView = (NSClipView)View.Subviews[ 0 ];
             NSTextView tv = (NSTextView)clipView.Subviews[ 0 ];
-            RectangleF frame;
+            RectangleF frame = RectangleF.Empty;
             frame.Size = ( (NSScrollView)View ).ContentSize;
             tv.Frame = frame;
         }

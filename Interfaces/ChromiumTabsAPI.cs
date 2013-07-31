@@ -46,6 +46,9 @@ namespace Amadeus.Chromium.Tabs {
 	[BaseType (typeof (NSObject))]
 	interface CTBrowser : CTTabStripModelDelegate {
 
+        [Export ("initWithMode:")]
+        IntPtr Constructor (bool offTheRecord);
+
 		[Export ("windowController")]
 		CTBrowserWindowController WindowController { get;  }
 
@@ -55,6 +58,10 @@ namespace Amadeus.Chromium.Tabs {
 		[Static]
 		[Export ("browser")]
 		CTBrowser Browser ();
+
+        [Static]
+        [Export ("browserWithMode:")]
+        CTBrowser Browser (bool offTheRecord);
 
 		[Export ("createToolbarController")]
 		CTToolbarController CreateToolbarController ();
@@ -85,6 +92,9 @@ namespace Amadeus.Chromium.Tabs {
 
 		[Export ("addTabContents:")]
 		CTTabContents AddTabContents (CTTabContents contents);
+
+        [Export ("isOffTheRecord")]
+        bool IsOffTheRecord { get; }
 
 		[Export ("newWindow")]
 		void NewWindow ();

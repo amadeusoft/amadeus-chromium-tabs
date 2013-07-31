@@ -34,8 +34,17 @@ namespace Amadeus.Chromium.Tabs {
 		const string selWindow = "window";
 		static readonly IntPtr selWindowHandle = Selector.GetHandle ("window");
 		[CompilerGenerated]
+		const string selIsOffTheRecord = "isOffTheRecord";
+		static readonly IntPtr selIsOffTheRecordHandle = Selector.GetHandle ("isOffTheRecord");
+		[CompilerGenerated]
+		const string selInitWithMode_ = "initWithMode:";
+		static readonly IntPtr selInitWithMode_Handle = Selector.GetHandle ("initWithMode:");
+		[CompilerGenerated]
 		const string selBrowser = "browser";
 		static readonly IntPtr selBrowserHandle = Selector.GetHandle ("browser");
+		[CompilerGenerated]
+		const string selBrowserWithMode_ = "browserWithMode:";
+		static readonly IntPtr selBrowserWithMode_Handle = Selector.GetHandle ("browserWithMode:");
 		[CompilerGenerated]
 		const string selCreateToolbarController = "createToolbarController";
 		static readonly IntPtr selCreateToolbarControllerHandle = Selector.GetHandle ("createToolbarController");
@@ -217,11 +226,31 @@ namespace Amadeus.Chromium.Tabs {
 			IsDirectBinding = GetType ().Assembly == global::ChromiumTabsAPI.Messaging.this_assembly;
 		}
 
+		[Export ("initWithMode:")]
+		[CompilerGenerated]
+		public CTBrowser (bool offTheRecord)
+			: base (NSObjectFlag.Empty)
+		{
+			IsDirectBinding = GetType ().Assembly == global::ChromiumTabsAPI.Messaging.this_assembly;
+			if (IsDirectBinding) {
+				Handle = MonoMac.ObjCRuntime.Messaging.IntPtr_objc_msgSend_bool (this.Handle, selInitWithMode_Handle, offTheRecord);
+			} else {
+				Handle = MonoMac.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper_bool (this.SuperHandle, selInitWithMode_Handle, offTheRecord);
+			}
+		}
+		
 		[Export ("browser")]
 		[CompilerGenerated]
 		public static CTBrowser Browser ()
 		{
 			return (CTBrowser) Runtime.GetNSObject (MonoMac.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selBrowserHandle));
+		}
+		
+		[Export ("browserWithMode:")]
+		[CompilerGenerated]
+		public static CTBrowser Browser (bool offTheRecord)
+		{
+			return (CTBrowser) Runtime.GetNSObject (MonoMac.ObjCRuntime.Messaging.IntPtr_objc_msgSend_bool (class_ptr, selBrowserWithMode_Handle, offTheRecord));
 		}
 		
 		[Export ("createToolbarController")]
@@ -780,6 +809,19 @@ namespace Amadeus.Chromium.Tabs {
 				}
 				__mt_Window_var = ret;
 				return ret;
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public virtual bool IsOffTheRecord {
+			[Export ("isOffTheRecord")]
+			get {
+				if (IsDirectBinding) {
+					return MonoMac.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsOffTheRecordHandle);
+				} else {
+					return MonoMac.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsOffTheRecordHandle);
+				}
 			}
 			
 		}
