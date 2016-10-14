@@ -6,11 +6,10 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3FAAC104-C872-4D44-848E-66EA7FDBEBE6}</ProjectGuid>
-    <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>Amadeus.Chromium.Tabs</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,9 +30,16 @@
     <AssemblyName>Amadeus.Chromium.Tabs</AssemblyName>
     <CustomCommands>
       <CustomCommands>
-        <Command type="BeforeBuild" command="mono bmac.exe -r=System.Drawing -p -v --outdir=../ --sourceonly=output.log ChromiumTabsAPI.cs" workingdir="${SolutionDir}/Interfaces" />
+        <Command>
+          <type>Custom</type>
+          <command>mono bmac.exe -r=System.Drawing -p -v --outdir=../ --sourceonly=output.log ChromiumTabsAPI.cs</command>
+          <workingdir>${SolutionDir}/Interfaces</workingdir>
+        </Command>
       </CustomCommands>
     </CustomCommands>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <TlsProvider>Default</TlsProvider>
+    <LinkMode>None</LinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <Optimize>true</Optimize>
@@ -53,9 +59,15 @@
     <AssemblyName>Amadeus.Chromium.Tabs</AssemblyName>
     <CustomCommands>
       <CustomCommands>
-        <Command type="BeforeBuild" command="mono bmac.exe -r=System.Drawing -p -v --outdir=../ --sourceonly=output.log ChromiumTabsAPI.cs" workingdir="${SolutionDir}/Interfaces" />
+        <Command>
+          <type>Custom</type>
+          <command>mono bmac.exe -r=System.Drawing -p -v --outdir=../ --sourceonly=output.log ChromiumTabsAPI.cs</command>
+          <workingdir>${SolutionDir}/Interfaces</workingdir>
+        </Command>
       </CustomCommands>
     </CustomCommands>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <TlsProvider>Default</TlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
     <Optimize>true</Optimize>
@@ -74,6 +86,8 @@
     <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>Amadeus.Chrome.Tabs</AssemblyName>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <TlsProvider>Default</TlsProvider>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -81,7 +95,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
-    <Reference Include="MonoMac" />
+    <Reference Include="MonoMac, Version=0.0.0.0, Culture=neutral" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

@@ -102,7 +102,7 @@ namespace SimpleApp
             // We need to recalculate the frame of the NSTextView when the frame changes.
             // This happens when a tab is created and when it's moved between windows.
             NSClipView clipView = (NSClipView)View.Subviews[ 0 ];
-            NSTextView tv = (NSTextView)clipView.Subviews[ 0 ];
+            NSTextView tv = (NSTextView)clipView.Subviews[ clipView.Subviews.Length - 1 ];
             RectangleF frame = RectangleF.Empty;
             frame.Size = ( (NSScrollView)View ).ContentSize;
             tv.Frame = frame;

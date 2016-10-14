@@ -40,16 +40,14 @@ namespace SimpleApp
         public override void FinishedLaunching( NSObject notification )
         {
             // Create a new browser & window when we start.
-            using( CTBrowserWindowController windowController = new CTBrowserWindowController( new MyBrowser() ) )
-            {
-                windowController.Browser.AddBlankTabInForeground( true );
-                windowController.ShowWindow( this );
-            } // Because window controllers are owned by the app, we need to release our reference.
+            CTBrowserWindowController windowController = new CTBrowserWindowController( new MyBrowser() );
+            windowController.Browser.AddBlankTabInForeground( true );
+            windowController.ShowWindow( this );
         }
 
         // When there are no windows in our application, this class (AppDelegate) will
         // become the first responder. We forward the command to the browser class.
-        [Export("commandDispatch:")]
+        [Export( "commandDispatch:" )]
         private void CommandDispatch( NSObject sender )
         {
             MyBrowser.ExecuteCommand( ( (dynamic)sender ).Tag );

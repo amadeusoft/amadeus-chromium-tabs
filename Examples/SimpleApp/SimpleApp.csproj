@@ -6,7 +6,7 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D8522887-A43A-4B80-BC2F-EFF27614A657}</ProjectGuid>
-    <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>SimpleApp</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -29,9 +29,18 @@
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="rm -Rf ${TargetDir}/${ProjectName}.app/Contents/Frameworks" />
-        <Command type="AfterBuild" command="mkdir -p ${TargetDir}/${ProjectName}.app/Contents/Frameworks" />
-        <Command type="AfterBuild" command="cp -Rpf ${SolutionDir}/ChromiumTabs/ChromiumTabs.framework ${TargetDir}/${ProjectName}.app/Contents/Frameworks/ChromiumTabs.framework/" />
+        <Command>
+          <type>AfterBuild</type>
+          <command>rm -Rf ${TargetDir}/${ProjectName}.app/Contents/Frameworks</command>
+        </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>mkdir -p ${TargetDir}/${ProjectName}.app/Contents/Frameworks</command>
+        </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>cp -Rpf ${SolutionDir}/ChromiumTabs/ChromiumTabs.framework ${TargetDir}/${ProjectName}.app/Contents/Frameworks/ChromiumTabs.framework/</command>
+        </Command>
       </CustomCommands>
     </CustomCommands>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
@@ -53,9 +62,18 @@
     <CodeSigningKey>Developer ID Application</CodeSigningKey>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="rm -Rf ${TargetDir}/${ProjectName}.app/Contents/Frameworks" />
-        <Command type="AfterBuild" command="mkdir -p ${TargetDir}/${ProjectName}.app/Contents/Frameworks" />
-        <Command type="AfterBuild" command="cp -Rpf ${SolutionDir}/ChromiumTabs/ChromiumTabs.framework ${TargetDir}/${ProjectName}.app/Contents/Frameworks/ChromiumTabs.framework/" />
+        <Command>
+          <type>AfterBuild</type>
+          <command>rm -Rf ${TargetDir}/${ProjectName}.app/Contents/Frameworks</command>
+        </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>mkdir -p ${TargetDir}/${ProjectName}.app/Contents/Frameworks</command>
+        </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>cp -Rpf ${SolutionDir}/ChromiumTabs/ChromiumTabs.framework ${TargetDir}/${ProjectName}.app/Contents/Frameworks/ChromiumTabs.framework/</command>
+        </Command>
       </CustomCommands>
     </CustomCommands>
     <PackageSigningKey>Developer ID Installer</PackageSigningKey>
@@ -83,8 +101,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
-    <Reference Include="MonoMac" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MonoMac, Version=0.0.0.0, Culture=neutral" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
